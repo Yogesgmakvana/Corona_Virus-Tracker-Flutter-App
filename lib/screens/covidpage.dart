@@ -105,7 +105,7 @@ class CovidPage extends StatelessWidget {
 
                           SizedBox(height: height * 0.03),
 
-                          // 📊 Chart
+                          //  Chart
                           PieChart(
                             dataMap: controller.dataMap,
                             chartType: ChartType.ring,
@@ -116,7 +116,7 @@ class CovidPage extends StatelessWidget {
 
                           SizedBox(height: height * 0.04),
 
-                          // 📋 Data Section
+                          //  Data Section
                           isTablet
                               ? Row(
                                   children: [
@@ -154,7 +154,7 @@ class CovidPage extends StatelessWidget {
 
                           SizedBox(height: height * 0.04),
 
-                          // 🔘 Button
+                          //  Button
                           InkWell(
                             onTap: () {
                               Get.to(() => CountryListScreen());
