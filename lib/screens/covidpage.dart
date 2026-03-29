@@ -64,7 +64,7 @@ class CovidPage extends StatelessWidget {
                 color: Colors.red,
                 padding: EdgeInsets.all(width * 0.03),
                 child: Text(
-                  "No Internet ❌",
+                  "No Internet Please check",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: baseFont,
@@ -105,7 +105,7 @@ class CovidPage extends StatelessWidget {
 
                           SizedBox(height: height * 0.03),
 
-                          // 📊 Chart
+                          //  Chart
                           PieChart(
                             dataMap: controller.dataMap,
                             chartType: ChartType.ring,
@@ -116,7 +116,7 @@ class CovidPage extends StatelessWidget {
 
                           SizedBox(height: height * 0.04),
 
-                          // 📋 Data Section
+                          //  Data Section
                           isTablet
                               ? Row(
                                   children: [
@@ -154,7 +154,7 @@ class CovidPage extends StatelessWidget {
 
                           SizedBox(height: height * 0.04),
 
-                          // 🔘 Button
+                          //  Button
                           InkWell(
                             onTap: () {
                               Get.to(() => CountryListScreen());
