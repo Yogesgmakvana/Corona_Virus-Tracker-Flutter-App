@@ -14,8 +14,20 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Covid Tracker',
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
+     
+      theme: ThemeData(
+        brightness: Brightness.light,
+        colorScheme: ColorScheme.light(
+          primary: Color(0xffFECEE9),
+        )
+      ),
+        // backgroundColor: Color(0xffFECEE9),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        
+      ),
+
+      themeMode: ThemeMode.light,
       home: SplashScreen(),
     );
   }

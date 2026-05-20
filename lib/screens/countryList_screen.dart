@@ -1,4 +1,5 @@
 import 'package:covid_19_tracker/controller/country_controller.dart';
+import 'package:covid_19_tracker/screens/country_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,6 +12,7 @@ class CountryListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Color(0xffFECEE9),
       appBar: AppBar(
         title: const Text("Country COVID Data"),
         centerTitle: true,
@@ -28,22 +30,27 @@ class CountryListScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               final country = controller.countries[index];
 
-              return ListTile(
-                leading: Image.network(
-                  country['countryInfo']['flag'],
-                  width: 40,
-                  errorBuilder: (_, __, ___) =>
-                      const Icon(Icons.flag),
-                ),
-                title: Text(country['country']),
-                subtitle: Text("Cases: ${country['cases']}"),
-                trailing: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Deaths: ${country['deaths']}"),
-                    Text("Recovered: ${country['recovered']}"),
-                    Text("Active: ${country['active']}"),
-                  ],
+              return InkWell(
+                onTap: () {
+                  Get.to(CountryScreen(cases: country['cases'], deaths: country['deaths'], recovered: country['recovered'], active:country['active'],country_name:country['country'],));
+                },
+                child: ListTile(
+                  leading: Image.network(
+                    country['countryInfo']['flag'],
+                    width: 40,
+                    errorBuilder: (_, __, ___) =>
+                        const Icon(Icons.flag),
+                  ),
+                  title: Text(country['country']),
+                  subtitle: Text("Cases: ${country['cases']}"),
+                  trailing: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Deaths: ${country['deaths']}"),
+                      Text("Recovered: ${country['recovered']}"),
+                      Text("Active: ${country['active']}"),
+                    ],
+                  ),
                 ),
               );
             },

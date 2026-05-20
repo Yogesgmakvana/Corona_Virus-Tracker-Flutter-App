@@ -50,7 +50,25 @@ class CovidPage extends StatelessWidget {
     final buttonHeight = height * 0.08;
 
     return Scaffold(
+  
       appBar: AppBar(
+        actions: [
+         IconButton(
+            onPressed: () {
+              Get.changeThemeMode(
+                Get.isDarkMode
+                    ? ThemeMode.light
+                    : ThemeMode.dark,
+              );
+
+            },
+            icon: Icon(
+              Get.isDarkMode
+                  ? Icons.light_mode
+                  : Icons.dark_mode,
+            ),
+          ),
+        ],
         title: const Text("Covid Dashboard"),
         centerTitle: true,
         backgroundColor: Colors.lightBlueAccent,
@@ -88,7 +106,7 @@ class CovidPage extends StatelessWidget {
         return LayoutBuilder(
           builder: (context, constraints) {
 
-            // Tablet layout
+            
             bool isTablet = constraints.maxWidth > 600;
 
             return Column(
@@ -116,7 +134,7 @@ class CovidPage extends StatelessWidget {
 
                           SizedBox(height: height * 0.04),
 
-                          //  Data Section
+                          
                           isTablet
                               ? Row(
                                   children: [
