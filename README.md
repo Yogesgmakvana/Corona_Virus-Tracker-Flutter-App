@@ -70,6 +70,10 @@ A modern, high-performance COVID-19 tracking mobile application built using Flut
 
 ## 📸 App Preview
 
+<p align="center">
+  <img src="assets/screenshots/Covid_tracker_appPic.png"width="100%">
+</p>
+
 <h2 align="center">📱 Application Screenshots</h2>
 
 <p align="center">
